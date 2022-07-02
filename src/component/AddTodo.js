@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, TextField } from "@mui/material";
 import { DesktopDatePicker , LocalizationProvider} from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { Axios } from "axios";
+import Axios from "axios";
 class AddTodo extends Component {
   // Create a local react state of the this component with both content date property set to nothing.
   constructor() {
@@ -45,7 +45,7 @@ class AddTodo extends Component {
         currentDate:this.state.date,
         dueDate: this.state.duedate
      };
-     console.log(jsonObject);
+
      Axios({
       method: "POST",
       url: "http://localhost:8080/add/item",
